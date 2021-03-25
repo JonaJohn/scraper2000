@@ -4,7 +4,7 @@ const cheerio = require ("cheerio");
 const jsdom = require("jsdom");
 const {JSDOM} = jsdom;
 const got = require('got');
-
+//jona1
 
 async function AfrikaDataScraping(){
     const url = 'https://de.wikipedia.org/wiki/Afrika'
