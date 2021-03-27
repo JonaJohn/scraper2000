@@ -4,7 +4,7 @@ const cheerio = require ("cheerio");
 const jsdom = require("jsdom");
 const {JSDOM} = jsdom;
 const got = require('got');
-//jona1
+
 
 async function AfrikaDataScraping(){
     const url = 'https://de.wikipedia.org/wiki/Afrika'
@@ -71,70 +71,11 @@ async function WikidataScraping(){
     const parentEl = dom.window.document.querySelector('div .toolbar-bottom');
     const childEl = parentEl.querySelector('button'); 
     console.log(childEl)
-    // document.getElementById("execute-button").click();//Versuch auf den Button zu klicken
-
-        // var x = document.getElementsByClassName('gtableheader');
-        // for (var i = 0; i < x.length; i++) {
-        // x[i].style.color = "red";
-        // }
-        
-       
-    // console.log(testDivs);
-    
-    // const ChildElements = dom.window.parentElement.querySelectorAll('div')
-    // Array.from(ChildElements).forEach(element => {
-    //     const Parentcontent = element.querySelector('pre')
-    //     const Parentcontent1 = Parentcontent.querySelector('span');
-    //     const ChildContents = Parentcontent1.querySelectorAll('span');
-    //     Array.of(ChildContents).forEach(element => {
-    //         console.log(element.value);
-    //     })
-        
-    //     } )                     
-
 }
 
-//const html = axios.get('https://de.wikipedia.org/wiki/Afrika');
-//const $ =  cheerio.load(html.data);// ganzes Html in cheerio damit man abfragen kann
-
-/*
-async function getSomething (){
-    const url = ('https://de.wikipedia.org/wiki/Afrika');
-
-    const data = await axios.get(url);//Sendet anfrage und bekommt HTML zurück
 
 
-    const $ = cheerio.load(data.data);// ganzes Html in cheerio damit man abfragen kann
-    console.log($);
-
-    const elementSelector = '#Infobox_Kontinent > table > tbody > tr';//Bestimmte Html stelle mit Copy Selector
-
-    $(elementSelector).each((Index, Elemente) => {//
-        console.log(Index);
-        $(Elemente).children().each((childIdx, childElem) => {
-            console.log($(childElem).text())
-        })
-    })
-
-}
-
-//getSomething();
-
-async function getSomethingElse(){
-    url = 'https://www.finanzen.net/boersenkurse'
-    const Site = await axios.get(url);//getting the whole html
-    $ = cheerio.load(Site.data);// Ins cheerio packen damit man es weiter verarbeiten kann
-
-    $('.box-headline').each((i, element) => {
-        const h1Text = $(element);
-        console.log(i);
-        console.log(h1Text.text());
-    })
-
-
-}
-*/
-async function getInformation(){
+async function getInformation(){//Cheerio how to write data 
     let url = 'https://www.teachthought.com/pedagogy/52-education-blogs-you-should-follow/';
 
     const SpecificElements = '#post-6231 > div.ast-post-format-.single-layout-1.ast-no-date-box > div > h2'
@@ -144,10 +85,6 @@ async function getInformation(){
     $(SpecificElements).each((i, element) => {
         console.log(i);
         console.log($(element).text())
-        /*const eachElement = $(element);
-        $(eachElement).each((childI, childElement) => {
-            console.log($(childElement).text());
-        })*/
     })
 }
 
